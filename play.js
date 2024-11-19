@@ -15,6 +15,7 @@ const connect = function () {
     console.log('New user connected!');
   });
 
+  // This code listens for incoming data from the server.
   conn.on('data', (data) => {
     console.log(data);
   });
