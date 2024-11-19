@@ -9,11 +9,7 @@ const connect = function () {
   })
 
   // This method interprets incoming data as text in UTF-8 encoding
-  conn.setEncoding('utf8')
-
-  conn.on('connect', () => {
-    console.log('New user connected!');
-  });
+  conn.setEncoding('utf8');
 
   // This code listens for incoming data from the server.
   conn.on('data', (data) => {
