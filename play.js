@@ -3,5 +3,6 @@ const { connect } = require('./client');
 const { setupInput } = require('./input')
 
 console.log('Connecting ...');
-connect(); // Calls the connect function to initiate the connection.
-setupInput();
+const conn = connect(); // Calls the connect function to initiate the connection.
+// Pass the connection object to setupInput
+setupInput(conn); // Now setupInput can use the connection
