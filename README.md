@@ -12,7 +12,7 @@ This project was made by [Dartanhan Ramos](https://github.com/dartRamos) under t
 
 ## Final Product
 
-!["screenshot description"](https://ibb.co/GTDR56W)
+!["Image of game](https://github.com/dartRamos/snake-client/blob/main/snake.PNG)
 
 
 ## Getting Started
