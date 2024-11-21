@@ -10,9 +10,9 @@ const MOVE_DOWN_KEY = 's';
 const MOVE_RIGHT_KEY = 'd';
 
 const KEY_MAPPINGS = {
-  '1': "Let's go, team!",
-  '2': "Watch out for the walls!",
-  '3': "Good luck, everyone!",
+  '1': "Say: Let's go, team!",
+  '2': "Say: Watch out for the walls!",
+  '3': "Say: Good luck, everyone!",
 };
 
 module.exports = {
