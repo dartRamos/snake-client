@@ -1,5 +1,15 @@
 let connection;
 
+const { 
+  MOVE_UP_KEY, 
+  MOVE_LEFT_KEY, 
+  MOVE_DOWN_KEY, 
+  MOVE_RIGHT_KEY, 
+  KEY_MAPPINGS
+} = require("./constants"); 
+
+
+
 const setupInput =  (conn) => {
   connection = conn;
   const stdin = process.stdin;  // create variable to hold the stdin object so we don't have to type process.stdin multiple times
@@ -11,26 +21,23 @@ const setupInput =  (conn) => {
 };
 
 const handleUserInput = function (key) {
-  if (key === 'w') {
+  if (key === MOVE_UP_KEY) {
     connection.write('Move: up');
-  } else if (key === 'a') {
+  } else if (key === MOVE_LEFT_KEY) {
     connection.write('Move: left');
-  } else if (key === 's') {
+  } else if (key === MOVE_DOWN_KEY) {
     connection.write('Move: down');
-  } else if (key === 'd') {
-    connection.write('Move: right')
-  } else if (key === '1') {
-    connection.write("Say: Is that all you got?!");
-  } else if (key === '2') {
-    connection.write('Say: You can move better!');
-  } else if (key === '3') {
-    connection.write("Say: Wow you're good!");
+  } else if (key === MOVE_RIGHT_KEY) {
+    connection.write('Move: right');
+  } else if (key in KEY_MAPPINGS) {
+    connection.write(KEY_MAPPINGS[key]);
   }
 
-  if (key === "\u0003") { // u0003 refers to ctrl + c
+  if (key === "\u0003") {
     process.exit();
   }
 };
+
 
 
 module.exports = { setupInput }; 

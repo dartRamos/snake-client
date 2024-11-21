@@ -1,11 +1,13 @@
 // The line `const net = require("net");` imports the 'net' module in Node.js.
 const net = require('net');
 
+const { IP, PORT, DEFAULT_PLAYER_NAME } = require("./constants");
+
 // establishes a connectiono with the game server
 const connect = function () {
   const conn = net.createConnection({
-    host: 'localhost',
-    port: 50541,
+    host: IP,
+    port: PORT,
   });
 
   // This method interprets incoming data as text in UTF-8 encoding
@@ -14,27 +16,7 @@ const connect = function () {
   // This code runs when the connection is successful and prints a message
   conn.on('connect', () => {
     console.log('Successfully conneceted to game server!')
-    conn.write('Name: DRO'); // Send the player's name to the server
-
-    // setTimeout(() => {
-    //   conn.write('Move: up');
-    //   console.log('Sent: Move up')
-    // }, 0);
-
-    // setTimeout(() => {
-    //   conn.write('Move: right');
-    //   console.log('Sent: Move right')
-    // }, 50);
-
-    // setTimeout(() => {
-    //   conn.write('Move: up');
-    //   console.log('Sent: Move up')
-    // }, 100);
-
-    // setTimeout(() => {
-    //   conn.write('Move: left');
-    //   console.log('Sent: Move left')
-    // }, 150);
+    conn.write(`Name: ${DEFAULT_PLAYER_NAME}`); // Send the player's name to the server
   });
 
 
