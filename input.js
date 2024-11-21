@@ -19,7 +19,14 @@ const handleUserInput = function (key) {
     connection.write('Move: down');
   } else if (key === 'd') {
     connection.write('Move: right')
+  } else if (key === '1') {
+    connection.write("Say: Is that all you got?!");
+  } else if (key === '2') {
+    connection.write('Say: You can move better!');
+  } else if (key === '3') {
+    connection.write("Say: Wow you're good!");
   }
+
   if (key === "\u0003") { // u0003 refers to ctrl + c
     process.exit();
   }
